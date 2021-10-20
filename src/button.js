@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class ButtonCount extends Component {
     constructor(props) {
         super(props);
-        this.state = { number: 0 }
+        this.handleNumberChange = this.handleNumberChange.bind(this);
     }
 
     IncreaseCount = () => {
