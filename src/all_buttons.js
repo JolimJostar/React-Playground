@@ -1,22 +1,18 @@
-import React, { Component } from 'react';
-import ButtonCount from './button'
+import React, { useState, useEffect } from 'react';
 
-class AllButtons extends Component {
-    constructor(props) {
-        super(props);
-        this.handleNumberChange = this.handleNumberChange.bind(this);
-        this.state = { number: 0 }
-    }
 
-    handleNumberChange(e){
-        this.setState({ number: parseInt(e.target.value) + 1})
-    }
 
-    render() { 
-        return ( 
-            <ButtonCount count={this.state.number} handleNumberChange={this.handleNumberChange}/>
-         );
-    }
+function Buttons() {
+
+    const [ count, setCount ] = useState(0)
+    const [ loaded, setLoader ] = useState(false)
+
+
+    return(
+        <button className="btn btn-info" onClick = { () => setCount( count + 1 )} >
+            {count}
+        </button>
+    );
 }
- 
-export default AllButtons;
+
+export default Buttons;
